@@ -19,7 +19,7 @@ module Anchor
   # makes the draw origin of the sprite at the center right
   CENTER_RIGHT = {anchor_x: 0.5, anchor_y: -0.5}.freeze
   
-  # makes the draw origin of the sprite at the center right (DragonRuby Default)
+  # makes the draw origin of the sprite at the bottom left (DragonRuby Default)
   BOTTOM_LEFT = {anchor_x: 0.0, anchor_y: 0.0}.freeze
 
   # makes the draw origin of the sprite at the center right
