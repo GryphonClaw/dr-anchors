@@ -1,30 +1,38 @@
 # Module Anchor
 # provides constants for changing the draw origin of a render primitive
 module Anchor
-  # makes the draw origin of the sprite at the top left
-  TOP_LEFT = {anchor_x: 0.0, anchor_y: 1.0}.freeze
-
-  # makes the draw origin of the sprite at the top center
-  TOP_CENTER = {anchor_x: -0.5, anchor_y: 1.0}.freeze
-
-  # makes the draw origin of the sprite at the top right
-  TOP_RIGHT = {anchor_x: -1.0, anchor_y: 1.0}.freeze
-
-  # makes the draw origin of the sprite at the center left
-  CENTER_LEFT = {anchor_x: 1.0, anchor_y: 0.0}.freeze
-
-  # makes the draw origin of the sprite at the center
-  CENTER = {anchor_x: 1.0, anchor_y: 0.5}.freeze
-
-  # makes the draw origin of the sprite at the center right
-  CENTER_RIGHT = {anchor_x: 1.0, anchor_y: -0.5}.freeze
+  # X Origin of the anchor is on the right side of the object
+  TOP_X = {anchor_x: 1.0}
+  # X Origin of the anchor is in the center of the object
+  CENTER_X = {anchor_x: 0.5}
+  # X Origin of the anchor is on the bottom side of the object
+  BOTTOM_X = {anchor_x: 0.0}
   
-  # makes the draw origin of the sprite at the bottom left (DragonRuby Default)
-  BOTTOM_LEFT = {anchor_x: 0.0, anchor_y: 0.0}.freeze
+  # Y Origin of the anchor is on the bottom side of the object
+  TOP_Y = {anchor_y: 1.0}
+  # Y Origin of the anchor is in the center of the object
+  CENTER_Y = {anchor_y: 0.5}
+  # Y Origin of the anchor is on the top side of the object
+  BOTTOM_Y = {anchor_y: 0.0}
 
-  # makes the draw origin of the sprite at the bottom center
-  BOTTOM_CENTER = {anchor_x: 0.5, anchor_y: 0.0}.freeze
-  
-  # makes the draw origin of the sprite at the bottom right
-  BOTTOM_RIGHT= {anchor_x: 1.0, anchor_y: 0.0}.freeze
+  # The origin of the primitive is draw at the top left of the object
+  TOP_LEFT = {**BOTTOM_X, **TOP_Y}
+  # The origin of the primitive is draw at the top center of the object
+  TOP_CENTER = {**CENTER_X, **TOP_Y}
+  # The origin of the primitive is draw at the top right of the object
+  TOP_RIGHT = {**TOP_X, **TOP_Y}
+
+  # The origin of the primitive is draw at the center left of the object
+  CENTER_LEFT = {**BOTTOM_X, **CENTER_Y}
+  # The origin of the primitive is draw at the center of the object
+  CENTER = {**CENTER_X, **CENTER_Y}
+  # The origin of the primitive is draw at the center right of the object
+  CENTER_RIGHT = {**TOP_X, **CENTER_Y}
+
+  # The origin of the primitive is draw at the center left of the object
+  BOTTOM_LEFT = {**BOTTOM_X, **CENTER_Y}
+  # The origin of the primitive is draw at the center of the object
+  BOTTOM_CENTER = {**CENTER_X, **CENTER_Y}
+  # The origin of the primitive is draw at the center right of the object
+  BOTTOM_RIGHT = {**TOP_X, **CENTER_Y}
 end
